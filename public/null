@@ -1,0 +1,140 @@
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+
+$d = Grado::all();
+$grado = Personal::find(4)->grado
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+
+
+
+$ = Equipo::find(1)->estado
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+
+
+
+$ = Equipo::find()->estado
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all();
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all();
+
+
+ 
+
+
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all(2);
+
+
+ 
+
+
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all(1);
+
+
+ 
+
+
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all();
+
+
+ 
+
+
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all();
+
+
+ 
+
+
+
+
+$d =Equipo::find(1)->estado
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+
+$estados = Estado::all();
+
+
+ 
+
+
+
+
+
+$d =Prestamo::find(1)
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+use App\Models\Prestamo
+
+$estados = Estado::all();
+
+
+ 
+
+
+
+
+
+$d =Prestamo::find(1)
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+use App\Models\Prestamo
+
+$estados = Estado::all();
+
+
+ 
+
+
+
+
+
+$d =Prestamo::find(1)
+use App\Models\Estado;
+use App\Models\Equipo;
+use App\Models\Personal;
+use App\Models\Prestamo;
+
+$estados = Estado::all();
+
+
+ 
+
+
+
+
+
+$d =Prestamo::find(1);

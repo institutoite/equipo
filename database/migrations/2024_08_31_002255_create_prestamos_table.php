@@ -13,22 +13,14 @@ return new class extends Migration
     {
         Schema::create('prestamos', function (Blueprint $table) {
             $table->id();
-
-
             $table->string('descripcion', 1000);
             $table->string('descargo', 100);
 
-            $table->date('fechaentrega');
-            $table->string('fotoentrega', 45);
-
-            $table->date('fechadevolucion');
-            $table->string('fotodevolucion', 45);
+            $table->date('fecha');
+            $table->string('foto', 45);
 
             $table->unsignedBigInteger('personal_id');//prestador el que presta
             $table->foreign('personal_id')->references("id")->on("personals");
-
-            $table->unsignedBigInteger('prestamista_id');
-            $table->foreign('prestamista_id')->references("id")->on("personals");
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references("id")->on("users");
@@ -38,11 +30,6 @@ return new class extends Migration
 
             $table->unsignedBigInteger('estado_id');//estado entrega
             $table->foreign('estado_id')->references("id")->on("estados");
-
-            $table->unsignedBigInteger('estado_devolucion');
-            $table->foreign('estado_devolucion')->references("id")->on("estados");
-
-
 
             $table->timestamps();
         });

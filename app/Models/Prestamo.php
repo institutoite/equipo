@@ -12,16 +12,14 @@ class Prestamo extends Model
 protected $guarded=[];
 protected $fillable=["descripcion",
                     "descargo",
-                    "fechaentrega",
-                    "fechadevolucion",
+                    "fecha",
+                    "foto",
                     "personal_id",
-                    "prestamista_id",
+                    "personal",
                     "user_id",
                     "equipo_id",
-                    "estado_id",
-                    "estado_devolucion",
-                    "fotoentrega",
-                    "fotodevolucion"];
+                    "estado_id",];
+
 
 
 

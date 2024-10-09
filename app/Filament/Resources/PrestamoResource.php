@@ -12,7 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\Hidden;
 
 class PrestamoResource extends Resource
 {
@@ -27,42 +26,30 @@ class PrestamoResource extends Resource
                 Forms\Components\TextInput::make('descripcion')
                     ->required()
                     ->maxLength(1000),
-
-
                 Forms\Components\TextInput::make('descargo')
                     ->required()
                     ->maxLength(100),
-
-
                 Forms\Components\DatePicker::make('fecha')
                     ->required(),
-
                 Forms\Components\TextInput::make('foto')
                     ->required()
                     ->maxLength(45),
-
-                Forms\Components\DatePicker::make('fechaesperada')
-                    ->required(),
-
                 Forms\Components\Select::make('personal_id')
                     ->relationship('personal', 'id')
                     ->required(),
 
                 Forms\Components\Hidden::make('user_id')
-                    ->required()
-                    ->default(1)
-                    ->hidden(),
-
+                ->required()
+                ->default(auth()->id()) // Esto se asignará por la lógica en mutateFormData
+                ->hidden(),
 
 
                 Forms\Components\TextInput::make('equipo_id')
                     ->required()
                     ->numeric(),
-
                 Forms\Components\TextInput::make('estado_id')
                     ->required()
                     ->numeric(),
-
             ]);
     }
 
@@ -79,9 +66,6 @@ class PrestamoResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('foto')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('fechaesperada')
-                    ->date()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('personal.id')
                     ->numeric()
                     ->sortable(),

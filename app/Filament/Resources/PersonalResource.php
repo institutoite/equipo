@@ -50,9 +50,14 @@ class PersonalResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('apellidos')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('grado.id')
+
+                Tables\Columns\TextColumn::make('grado.grado') // Cambia 'nombre' al campo real que quieres mostrar
+                    ->label('Grado')
+                    ->sortable()
+                    ->searchable(),
+                /* Tables\Columns\TextColumn::make('grado.id')
                     ->numeric()
-                    ->sortable(),
+                     ->sortable(),*/
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

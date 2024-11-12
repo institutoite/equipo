@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo; // agregar
 class Equipo extends Model
 {
     use HasFactory;
-    protected $fillable =["descripcion","codigo",'qr','foto','estado','fechadealta'];
+    protected $guarded =[];
 
     /*public function estado(): BelongsTo
     {
@@ -21,6 +21,10 @@ class Equipo extends Model
         return $this->belongsTo(Personal::class);
     }*/
 
+    public function prestamos()
+    {
+        return $this->hasMany(Prestamo::class);
+    }
 
     public function devolverEquipo($id)
     {

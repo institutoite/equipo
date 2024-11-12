@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Personal extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 
     public function equipos(): HasMany
     {

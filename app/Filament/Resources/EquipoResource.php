@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\EquipoResource\Pages;
 use App\Filament\Resources\EquipoResource\RelationManagers;
 use App\Models\Equipo;
+use App\Models\Estado;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class EquipoResource extends Resource
 {
@@ -26,12 +28,21 @@ class EquipoResource extends Resource
                 Forms\Components\TextInput::make('descripcion')
                     ->required()
                     ->maxLength(100),
+                Forms\Components\TextInput::make('nombre')
+                    ->required()
+                    ->maxLength(100),
                 Forms\Components\TextInput::make('codigo')
                     ->required()
                     ->maxLength(100),
                 Forms\Components\TextInput::make('qr')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('cantidad_total')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('cantidad_disponible')
+                    ->hidden()  // Este campo estará oculto
+                    ->default(15), // Valor por defecto
               //  forms\Components\TextInput::make('foto')
              //       ->required()
               //      ->maxLength(255),
@@ -44,12 +55,20 @@ class EquipoResource extends Resource
                     ->maxSize(2048)
                     ->image(),
 
-                Forms\Components\TextInput::make('estado')
-                    ->required()
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('estado')
+                //     ->required()
+                //     ->maxLength(255),
+                Forms\Components\Select::make('estado_id')
+                    ->label('Estado')
+                    ->options(Estado::all()->pluck('estado', 'id'))
+                    ->required(),
+
                 Forms\Components\DatePicker::make('fechadealta')
                     ->required(),
+                Forms\Components\Hidden::make('personal_id')
+                    ->default(fn() => Auth::id()),
             ]);
+            
     }
 
     public static function table(Table $table): Table
@@ -119,4 +138,5 @@ class EquipoResource extends Resource
             'edit' => Pages\EditEquipo::route('/{record}/edit'),
         ];
     }
+    
 }

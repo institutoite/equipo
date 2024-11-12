@@ -10,15 +10,15 @@ class Prestamo extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    protected $fillable=["descripcion",
-                    "descargo",
-                    "fecha",
-                    "foto",
-                    "personal_id",
-                    "personal",
-                    "user_id",
-                    "equipo_id",
-                    "estado_id",];
+    // protected $fillable=["descripcion",
+    //                 "descargo",
+    //                 "fecha",
+    //                 "foto",
+    //                 "personal_id",
+    //                 "personal",
+    //                 "user_id",
+    //                 "equipo_id",
+    //                 "estado_id",];
 
 
 
@@ -26,6 +26,11 @@ class Prestamo extends Model
     public function personal(): BelongsTo
     {
         return $this->belongsTo(Personal::class);
+    }
+    
+    public function equipo(): BelongsTo
+    {
+        return $this->belongsTo(Equipo::class);
     }
 
 

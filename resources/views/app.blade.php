@@ -155,7 +155,7 @@ footer {
         <div class="container">
             <h1 class="login"><a class="login" href="{{ url('/admin/login') }}">Login</a></h1>
             <h1>Préstamos de Equipos Policiales</h1>
-            <p>Policía Nacional de Bolivia</p>
+            <p>Policía Boliviana</p>
         </div>
     </header>
 
@@ -181,7 +181,7 @@ footer {
 
     <!-- Pie de Página -->
     <footer>
-        <p>&copy; 2024 Policía Nacional de Bolivia. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Policía Boliviana. Todos los derechos reservados.</p>
     </footer>
     </body>
 </html>
